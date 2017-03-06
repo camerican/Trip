@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306162156) do
+ActiveRecord::Schema.define(version: 20170306164341) do
+
+  create_table "journeys", force: :cascade do |t|
+    t.integer  "duration"
+    t.string   "start_address"
+    t.string   "end_address"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "user_journeys", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
