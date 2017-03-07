@@ -62,6 +62,7 @@ function calcRoute() {
     }
   });
 }
+
 	google.maps.event.addListener(autocomplete, 'place_changed', function() {
 		infoWindow.close();
 		var place = autocomplete.getPlace();
@@ -89,6 +90,7 @@ function calcRoute() {
 	} else {
 		handleLocationError(false, infoWindow, map.getCenter());
 	}
+
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
