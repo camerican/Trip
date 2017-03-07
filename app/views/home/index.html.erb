@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAPSAPI'] %>&callback=initMap&libraries=places"
+    async defer></script>
+  <input type="text" id="autocomplete">
+</html>
