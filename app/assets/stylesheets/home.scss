@@ -37,4 +37,19 @@ nav ul li:hover{
 }
 .home div {
 	height: 400px;
+
+#map {
+height: 60%;
+width: 60%;
+}
+
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+#autocomplete {
+	width: 100%;
+	height: 25px;
 }
