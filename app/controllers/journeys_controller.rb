@@ -5,6 +5,7 @@ class JourneysController < ApplicationController
   # GET /journeys.json
   def index
     @journeys = Journey.all
+    @journey = Journey.last
   end
 
   # GET /journeys/1
@@ -69,6 +70,6 @@ class JourneysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def journey_params
-      params.fetch(:journey, {})
+      params.require(:journey).permit(:start_address, :end_address)
     end
 end
