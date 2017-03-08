@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<p>Start: <%= @journey.start_address %></p>
+<p>End: <%= @journey.end_address %></p>
+
 <%= link_to 'Edit', edit_journey_path(@journey) %> |
 <%= link_to 'Back', journeys_path %>
