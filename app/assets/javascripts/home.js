@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	initMap();
 	calcRoute();
 	document.getElementById("search").addEventListener("submit",function(event){
+		event.preventDefault();
 		calcRoute();
 	});
 });
