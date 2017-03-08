@@ -1,14 +1,20 @@
+// VARIABLES ######################################################################################
+// 
+// 
 var directionsDisplay;
 var directionsService;
 var map;
-
+// FUNCTIONS ######################################################################################
+// 
+// 
+// initiating the map
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'));
 	directionsService = new google.maps.DirectionsService();
 	directionsDisplay = new google.maps.DirectionsRenderer();
 	directionsDisplay.setMap(map);
 }
-
+// Calculating the route 
 function calcRoute() {
 	var start = document.getElementById('origin').value;
 	var end = document.getElementById('destination').value;
@@ -24,7 +30,9 @@ function calcRoute() {
 		}
 	});
 }
-
+// EVENTS ######################################################################################
+// 
+// 
 document.addEventListener("DOMContentLoaded",function(){
 	initMap();
 	calcRoute();
