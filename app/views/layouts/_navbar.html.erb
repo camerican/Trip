@@ -22,12 +22,18 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
                         <li><%=link_to 'Travel Tips', root_path%></li> 
-                        <li><%=link_to "New Journey", new_journey_path%></li> 
+                        <%= content_tag :li do 
+                          link_to "New Journey", new_journey_path
+                          end if current_user %>
                         <%= content_tag :li do 
                           link_to "Logout", destroy_user_session_path, method: :delete
                           end if current_user %>
-                        <li><%=link_to "Login", new_user_session_url%></li> 
-                        <li><%=link_to "Register", new_user_registration_path %></li>    
+                        <%= content_tag :li do 
+                          link_to "Login", new_user_session_url
+                          end if !current_user %>
+                        <%= content_tag :li do 
+                        link_to "Register", new_user_registration_path 
+                        end if !current_user %>     
                   </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
