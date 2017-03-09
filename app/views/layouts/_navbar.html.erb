@@ -26,6 +26,9 @@
                           link_to "New Journey", new_journey_path
                           end if current_user %>
                         <%= content_tag :li do 
+                          link_to "Old Journey", journeys_path
+                          end if current_user %>
+                        <%= content_tag :li do 
                           link_to "Logout", destroy_user_session_path, method: :delete
                           end if current_user %>
                         <%= content_tag :li do 
