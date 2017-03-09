@@ -30,6 +30,21 @@ function calcRoute() {
 		}
 	});
 }
+function TravelTime() {
+	var service = new google.maps.DistanceMatrixService();
+	return service.getDistanceMatrix(
+  {
+   //  arrivalTime: Date,
+  	// departureTime: Date,
+  	travelMode: document.getElementById('mode').value,
+  	origins: [document.getElementById('origin').value],
+  	destinations: [document.getElementById('destination').value] 
+  }, function(response,status){
+  	console.log(response,status)
+  	document.getElementById('travelDistance').innerText = response.rows[0].elements[0].distance.text
+  	document.getElementById('travelDuration').innerText = response.rows[0].elements[0].duration.text
+  })
+}
 // EVENTS ######################################################################################
 // 
 // 
@@ -39,5 +54,6 @@ document.addEventListener("DOMContentLoaded",function(){
 	document.getElementById("search").addEventListener("submit",function(event){
 		event.preventDefault();
 		calcRoute();
+		TravelTime();
 	});
 });
